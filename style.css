@@ -20,7 +20,8 @@ h1 {
 }
 
 .hidden {
-  display: none;
+  /* display: none; */
+  opacity: 10%;
 }
 
 .page {
@@ -49,6 +50,7 @@ h1 {
 @media print {
     .hidden, .later {
         display: inherit;
+        opacity: 100%;
     }
     div.slide {
         page-break-before: always;
