@@ -28,6 +28,11 @@ h1 {
   opacity: 10%;
 }
 
+.left {
+    width: 50%;
+    float: left;
+}
+
 .page {
     width: 90%;
     height: 100%;
