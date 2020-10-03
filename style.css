@@ -1,9 +1,10 @@
 html, body {
     margin: 0;
     width: 100%;
-    height: 95%;
-    font-size: large; /* 2.3vw */
+    height: calc( 100vw * 9/16 );
+    font-size: 2vw;
     text-rendering: optimizeLegibility;
+    border: solid 1px gray;
 }
 
 .center {
