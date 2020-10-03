@@ -12,10 +12,13 @@ html, body {
 
 h1 {
     width: 100%;
-    color: #008ad9;
+    color: #3439d1;
 }
 
 .hcenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
 }
 
@@ -52,7 +55,7 @@ h1 {
     padding: 0.3em 0;
     text-align: center;
     color: white;
-    background-color: #008ad9;
+    background-color: #3439d1;
 }
 
 @media print {
