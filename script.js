@@ -62,12 +62,12 @@ function counthidden(e) {
 function showpage(i) {
     if (i >= 0 && i < slides.childElementCount) {
         page = i;
-        window.location.hash = "#" + page;
+        window.location.hash = `#${page}`;
         container.innerHTML =
-            '<div class="' + slides.children[i].classList + '">' +
-            slides.children[i].innerHTML +
-            '<div class="pagenum">' + (i+1) + '/' + slides.childElementCount + '</div>'
-            "</div>";
+            `<div class="${slides.children[i].classList}">` +
+                slides.children[i].innerHTML +
+                `<div class="pagenum">${page}/${slides.childElementCount}</div>` +
+            `</div>`;
         revealed = 0;
         hidden = counthidden(container);
     }
