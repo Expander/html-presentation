@@ -48,6 +48,10 @@ h1 {
     right: 1em;
 }
 
+.title > .pagenum {
+    display: none;
+}
+
 #slides {
     display: none;
 }
