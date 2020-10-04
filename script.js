@@ -1,3 +1,5 @@
+'use strict;'
+
 document.onkeydown = checkKey;
 
 var page = 0;
