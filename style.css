@@ -1,3 +1,7 @@
+:root {
+    --ratio: calc(16/9);
+}
+
 html, body {
     margin: 0;
     width: 100%;
@@ -37,9 +41,9 @@ h1 {
 .page {
     background-color: white;
     width: 100vw;
-    height: calc( 100vw * 9/16 );
+    height: calc( 100vw / var(--ratio) );
     max-height: 100vh;
-    max-width: calc(100vh * 16/9);
+    max-width: calc(100vh * var(--ratio));
     margin: auto;
     position: absolute;
     /* top: 0; bottom: 0; */ /* vertical center */
