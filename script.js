@@ -9,20 +9,19 @@ var hidden = 0;
 var container = document.getElementById('container');
 var slides = document.getElementById('slides');
 
-function checkKey(e) {
+function checkKey(event) {
+    event = event || window.event;
 
-    e = e || window.event;
-
-    if (e.keyCode == '38') {
+    if (event.keyCode == '38') {
         showpage(page - 1);
     }
-    else if (e.keyCode == '40') {
+    else if (event.keyCode == '40') {
         showpage(page + 1);
     }
-    else if (e.keyCode == '37') {
+    else if (event.keyCode == '37') {
         showpage(page - 1);
     }
-    else if (e.keyCode == '39' || e.keyCode == '32') {
+    else if (event.keyCode == '39' || event.keyCode == '32') {
         if (revealed < hidden) {
 	    ++revealed;
 	    reveal(container, 1);
@@ -30,7 +29,6 @@ function checkKey(e) {
 	    showpage(page + 1);
         }
     }
-
 }
 
 function reveal(e, n) {
