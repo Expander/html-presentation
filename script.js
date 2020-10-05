@@ -118,6 +118,16 @@ function swipedetect(touchsurface, callback){
     }, false);
 }
 
+// keep font size constant relative to container
+function calcFont() {
+    var fontWidth = 2 * container.clientWidth/window.innerWidth;
+    return `${fontWidth}vw`;
+}
+
+function onResize() {
+    container.style.fontSize = calcFont();
+}
+
 // set swipe detection for touch screens
 swipedetect(document.querySelector('body'), swipedir => {
     switch (swipedir) {
@@ -132,5 +142,7 @@ hide(slides);
 if (window.location.hash) {
     page = parseInt(window.location.hash.substring(1));
 }
+
+window.addEventListener('resize', onResize);
 
 showpage(page);
