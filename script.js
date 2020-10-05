@@ -31,15 +31,15 @@ function checkKey(event) {
     }
 }
 
-function reveal(e, n) {
-    if (e.classList.contains("hidden")) {
-        if (e.classList.contains("later")) { --n; };
+function reveal(element, n) {
+    if (element.classList.contains("hidden")) {
+        if (element.classList.contains("later")) { --n; };
         if (n == 0) {
-            e.classList.toggle("hidden");
+            element.classList.toggle("hidden");
         }
     }
     if (n < 0) return n;
-    for (child of e.children) {
+    for (child of element.children) {
         n = reveal(child, n);
         if (n < 0) return n;
     }
