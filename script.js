@@ -14,14 +14,11 @@ function checkKey(event) {
 
     if (event.keyCode == '38') {
         showPage(page - 1);
-    }
-    else if (event.keyCode == '40') {
+    } else if (event.keyCode == '40') {
         showPage(page + 1);
-    }
-    else if (event.keyCode == '37') {
+    } else if (event.keyCode == '37') {
         showPage(page - 1);
-    }
-    else if (event.keyCode == '39' || event.keyCode == '32') {
+    } else if (event.keyCode == '39' || event.keyCode == '32') {
         if (revealed < hidden) {
 	    ++revealed;
 	    reveal(container, 1);
@@ -33,7 +30,9 @@ function checkKey(event) {
 
 function reveal(element, n) {
     if (element.classList.contains("hidden")) {
-        if (element.classList.contains("later")) { --n; };
+        if (element.classList.contains("later")) {
+            --n;
+        }
         if (n == 0) {
             element.classList.toggle("hidden");
         }
