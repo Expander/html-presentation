@@ -78,6 +78,11 @@ h1 {
     background-color: #3439d1;
 }
 
+ul {
+    margin-left: 1em;
+    padding-left: 1em;
+}
+
 @media print {
     .hidden, .later {
         display: inherit;
