@@ -1,10 +1,10 @@
 html, body {
     margin: 0;
     width: 100%;
-    height: calc( 100vw * 9/16 );
+    height: 100%;
     font-size: 2vw;
     text-rendering: optimizeLegibility;
-    border: solid 1px gray;
+    background-color: gray;
 }
 
 .center {
@@ -35,15 +35,20 @@ h1 {
 }
 
 .page {
-    width: 90%;
-    height: 100%;
-    margin-left: 5%;
-    margin-right: 5%;
+    background-color: white;
+    width: 100vw;
+    height: calc( 100vw * 9/16 );
+    max-height: 100vh;
+    max-width: calc(100vh * 16/9);
+    margin: auto;
+    position: absolute;
+    /* top: 0; bottom: 0; */ /* vertical center */
+    left: 0; right: 0; /* horizontal center */
 }
 
 .pagenum {
     font-size: smaller;
-    position: absolute; 
+    position: absolute;
     bottom: 1em;
     right: 1em;
 }
@@ -57,7 +62,7 @@ h1 {
 }
 
 .slide {
-    width: 100%;
+    padding: 0% 5%;
     height: 100%;
 }
 
