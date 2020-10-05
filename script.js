@@ -13,20 +13,20 @@ function checkKey(event) {
     event = event || window.event;
 
     if (event.keyCode == '38') {
-        showpage(page - 1);
+        showPage(page - 1);
     }
     else if (event.keyCode == '40') {
-        showpage(page + 1);
+        showPage(page + 1);
     }
     else if (event.keyCode == '37') {
-        showpage(page - 1);
+        showPage(page - 1);
     }
     else if (event.keyCode == '39' || event.keyCode == '32') {
         if (revealed < hidden) {
 	    ++revealed;
 	    reveal(container, 1);
         } else {
-	    showpage(page + 1);
+	    showPage(page + 1);
         }
     }
 }
@@ -46,18 +46,18 @@ function reveal(element, n) {
     return n;
 }
 
-function counthidden(e) {
+function countHidden(e) {
     var n = 0;
     if (e.classList.contains("later")) {
         n = 1;
     }
     for (child of e.children) {
-        n += counthidden(child);
+        n += countHidden(child);
     }
     return n;
 }
 
-function showpage(i) {
+function showPage(i) {
     if (i >= 0 && i < slides.childElementCount) {
         page = i;
         window.location.hash = `#${page}`;
@@ -67,7 +67,7 @@ function showpage(i) {
                 `<div class="pagenum">${page}/${slides.childElementCount}</div>` +
             `</div>`;
         revealed = 0;
-        hidden = counthidden(container);
+        hidden = countHidden(container);
     }
 }
 
@@ -83,7 +83,7 @@ function hide(e) {
 }
 
 // swipe gesture handling, detect swipes to left and right
-function swipedetect(touchsurface, callback){
+function swipeDetect(touchsurface, callback){
     let swipedir,
         startX,
         distX,
@@ -127,7 +127,7 @@ function onResize() {
 }
 
 // set swipe detection for touch screens
-swipedetect(document.querySelector('body'), swipedir => {
+swipeDetect(document.querySelector('body'), swipedir => {
     switch (swipedir) {
     case 'left': checkKey({keyCode: 39}); break;
     case 'right': checkKey({keyCode: 38}); break;
@@ -143,4 +143,4 @@ if (window.location.hash) {
 
 window.addEventListener('resize', onResize);
 
-showpage(page);
+showPage(page);
