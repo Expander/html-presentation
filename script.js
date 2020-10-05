@@ -1,6 +1,7 @@
 'use strict;'
 
 document.onkeydown = checkKey;
+window.onresize = onResize;
 
 var page = 0;
 var revealed = 0;
@@ -139,7 +140,5 @@ hide(slides);
 if (window.location.hash) {
     page = parseInt(window.location.hash.substring(1));
 }
-
-window.addEventListener('resize', onResize);
 
 showPage(page);
