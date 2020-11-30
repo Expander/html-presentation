@@ -94,7 +94,7 @@ function swipeDetect(touchsurface, callback){
         startTime;
 
     touchsurface.addEventListener('touchstart', e => {
-        var touchobj = e.changedTouches[0];
+        const touchobj = e.changedTouches[0];
         swipedir = undefined;
         startX = touchobj.pageX;
         startTime = new Date().getTime();
@@ -106,7 +106,7 @@ function swipeDetect(touchsurface, callback){
     }, false);
 
     touchsurface.addEventListener('touchend', e => {
-        var touchobj = e.changedTouches[0];
+        const touchobj = e.changedTouches[0];
         distX = touchobj.pageX - startX;
         elapsedTime = new Date().getTime() - startTime;
         if (elapsedTime <= allowedTime && Math.abs(distX) >= threshold) {
@@ -119,7 +119,7 @@ function swipeDetect(touchsurface, callback){
 
 // keep font size constant relative to container
 function calcFont() {
-    var fontWidth = 2 * container.clientWidth/window.innerWidth;
+    const fontWidth = 2 * container.clientWidth/window.innerWidth;
     return `${fontWidth}vw`;
 }
 
