@@ -85,13 +85,9 @@ function hide(e) {
 
 // swipe gesture handling, detect swipes to left and right
 function swipeDetect(touchsurface, callback){
-    let swipedir,
-        startX,
-        distX,
-        threshold = 150, //required min distance traveled to be considered swipe
-        allowedTime = 300, // maximum time allowed to travel that distance
-        elapsedTime,
-        startTime;
+    const threshold = 150;   // required min distance traveled to be considered swipe
+    const allowedTime = 300; // maximum time allowed to travel that distance
+    let swipedir, startX, startTime;
 
     touchsurface.addEventListener('touchstart', e => {
         const touchobj = e.changedTouches[0];
@@ -107,8 +103,8 @@ function swipeDetect(touchsurface, callback){
 
     touchsurface.addEventListener('touchend', e => {
         const touchobj = e.changedTouches[0];
-        distX = touchobj.pageX - startX;
-        elapsedTime = new Date().getTime() - startTime;
+        const distX = touchobj.pageX - startX;
+        const elapsedTime = new Date().getTime() - startTime;
         if (elapsedTime <= allowedTime && Math.abs(distX) >= threshold) {
             swipedir = (distX < 0)? 'left' : 'right';
         }
