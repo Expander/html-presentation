@@ -3,12 +3,12 @@
 document.onkeydown = checkKey;
 window.onresize = onResize;
 
-var page = 0;
-var revealed = 0;
-var hidden = 0;
+let page = 0;
+let revealed = 0;
+let hidden = 0;
 
-var container = document.getElementById('container');
-var slides = document.getElementById('slides');
+let container = document.getElementById('container');
+let slides = document.getElementById('slides');
 
 function checkKey(event) {
     event = event || window.event;
@@ -47,7 +47,7 @@ function reveal(element, n) {
 }
 
 function countHidden(e) {
-    var n = 0;
+    let n = 0;
     if (e.classList.contains("later")) {
         n = 1;
     }
